@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	 function inputNum(){
+		var num01 = Number(prompt("첫번째 정수를 입력하세요"));
+		var num02 = Number(prompt("두번째 정수를 입력하세요"));
+		return [num01, num02];//배열로 리턴값을 여러개  받을 수 있다.
+	} 
+
+	
+	function getMin(num01,num02){
+		
+		var min=0;
+		
+		if(num01>=num02){
+			min = num02;
+		}else{
+			min = num01;
+		}
+		return min;
+	}
+	 function getMax(num01,num02){
+		 var max=0;
+			
+			if(num01>=num02){
+				max = num01;
+			}else{
+				max = num02;
+			}
+			return max;
+		
+		return max;
+	}
+	 function print(min,max)
+		{
+			document.write("min    max  : "+ min + "&nbsp;&nbsp;&nbsp;" + max);
+		}
+	
+	 
+	var num = inputNum();
+	var num01 = num[0];
+	var num02 = num[1];
+	document.write("1's 정수 : " +num01 +"<br>");
+	document.write("2's 정수 : " +num02 + "<br>");
+	print(getMin(num01,num02),getMax(num01,num02));
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

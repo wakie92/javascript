@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function selectAll(){
+		var hobbies = document.inputForm.hobby;
+		for(var i=0 ; i<hobbies.length ; i++){
+			hobbies[i].checked = true;
+		}
+	}
+	function deselectAll(){
+		var hobbies = document.inputForm.hobby;
+		for(var i=0 ; i<hobbies.length ; i++){
+			hobbies[i].checked = false;
+		}
+	}
+	
+	function showInfo(){
+		var hobbies = document.inputForm.hobby;
+		var msg = "";
+		
+		//length만큼 돌리는것이 좀더 안전하고 좋은 코드이다. 
+		for(var i = 0; i <hobbies.length; i++){
+			if(hobbies[i].checked){
+				 msg += hobbies[i].value + '\n';
+			}
+		} 
+		
+		/* 또다른 value 값이 나올수있다. 
+		for (var i in hobbies){
+			if(hobbies[i].checked == true){
+				msg += hobbies[i].value +'\n';
+			}
+		} */
+		alert(msg);
+	}
+
+	function toggle(check){
+		var hobbies = document.inputForm.hobby;
+		for(var i =0 ; i <hobbies.length; i++){
+			hobbies[i].checked = check;
+		}
+	}
+	
+	function toggle() {//알고리즘 확인 하기 
+		var hobbys = document.inputForm.hobby;
+		
+		var cnt = 0;
+		for(var i = 0; i < hobbys.length; i++) {
+			if(hobbys[i].checked) {
+				cnt++;
+			}
+		}
+		
+		var check = true;
+		if(cnt == hobbys.length) {
+			check = false;
+		}
+		
+		for(var i = 0; i < hobbys.length; i++) {
+			hobbys[i].checked = check;
+		}
+	}
+	
+</script>
+</head>
+<body>
+<!--  checkbox 와 radio는  넘어가는 value값을 적어줘야 한다. -->
+	<form name = "inputForm">
+		당신의 취미는?<br>
+		<input type = "checkbox" name = "hobby" value = "음악감상">음악감상 <br>
+		<input type = "checkbox" name = "hobby" value = "영화감상">영화감상 <br>
+		<input type = "checkbox" name = "hobby" value = "독서">독서 <br>
+		<input type = "checkbox" name = "hobby" value = "게임">게임<br>
+		<!-- <input type = "button"  value = "전체선택" onclick = "selectAll()"> &nbsp;&nbsp;
+		<input type = "button"  value = "전체해제" onclick = "deselectAll()"> &nbsp;&nbsp; -->
+		<input type = "button" value ="전체선택" onclick = "toggle(true)">
+		<input type = "button" value ="전체해제" onclick = "toggle(false)">
+		<input type = "button" value ="전체선택/해제" onclick = "toggle()">
+		<input type = "button"  value = "결과보기" onclick = "showInfo()"> &nbsp;&nbsp;
+		
+		<input type="submit" value ="전송">		
+	</form>
+</body>
+</html>

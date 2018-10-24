@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//배열에 객체를 넣는 방법들.
+	/* 방법1 */
+	var person1 = {
+		"name" : '홍길동',
+		"phone" : "010-1111-2222"
+	};
+
+	var person2 ={ 
+		"name" : "고길동",
+		"phone": " 010-3333-2222"
+	};
+	var people = [person1, person2];
+
+	
+	/*방법2 */
+	var people = [{
+		'name' : '홍길동',
+		'phone' :  '010-1111-2222'
+	},{
+		"name" : "고길동",
+		"phone": " 010-3333-2222"
+	}];
+	
+	/* 방법3 */
+	var people = [];
+	people.push({
+		'name' : '홍길동',
+		'phone' :  '010-1111-2222'
+	})
+	
+	people.push({
+		"name" : "고길동",
+		"phone": " 010-3333-2222"
+	})
+	
+	console.log(people);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

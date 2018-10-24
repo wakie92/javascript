@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+		var even = [];
+		var score = [];
+		var i = 0;
+		do{
+			score[i]  = Number(prompt());
+			if(score[i]%2==0){
+				document.write((i+1) + "'s 정수  : " + score[i] + "<br>");
+				even.push(score[i]);
+				i++;
+			}else{
+				document.write((i+1) + "'s 정수  : " + score[i] + "<br>");
+			}
+			
+		}while(even.length<5);
+		
+		document.write("&lt;Print&gt;" +  "<br>");
+		for(var i in even){
+			document.write(even[i] + " ");
+		}
+		
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	//매개변수 자체가 deepcopy되고있는 중
+	function clone(obj){
+		var cloneObj = {};
+		for(var key in obj){
+			cloneObj [key] = obj[key];
+		}
+		return cloneObj;
+	}
+	var person = {//shallow copy;
+			"name" : "홍길동",
+			"phone" : "010-1111-2222",
+			"info" : function(){
+				for(var key in this){
+					if(typeof this[key] != "function"){
+						document.write(key + " : " + this[key] + "<br>");
+					}
+				}
+			}
+	};
+	
+	//deepcopy
+	var person2 = {};
+	for(var key in person){
+		person2[key] = person[key];
+	}
+	//deepcoby
+	var person2 = clone(person);
+
+	//deepcopy ECMAScript 6 에서 쓸수있는 전개연산자를 이용
+	var person2 = {...person};
+	
+	//var person2 = person; //shallow copy;
+	console.log(person);
+	console.log(person2);
+	
+	person.phone = "010-4444-3333";
+	console.log(person);
+	console.log(person2);
+	
+	person.info();
+	person2.info();
+
+	document.write();
+	
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

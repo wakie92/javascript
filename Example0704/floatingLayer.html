@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div.box 
+        {
+            border:  3px solid black;
+            text-align: center;
+            background-color: aqua;
+            /*display : table-cell;
+            vertical-align: middle;*/
+            
+            top: 100px;
+            left: 500px;
+        }
+    </style>
+    <script>
+       function Box(x,y,width,height){
+               
+            this.box = document.createElement('div');
+            this.box.className = 'box';
+            this.box.style.position = 'absolute';
+            this.box.style.left = x + 'px';
+            this.box.style.top = y + 'px';
+            this.box.style.width = width + 'px';
+            this.box.style.height = height + 'px';
+           
+           
+           document.body.appendChild(this.box);
+           
+           if(document.boxCnt == null){
+               document.boxCnt = 0; 
+               
+           }else {
+               document.boxCnt += 1; 
+              
+           }
+            this.box.no = document.boxCnt;
+           document.zIndexCount = document.boxCnt;
+           this.box.style.zIndex = document.zIndexCount;
+    
+           
+            console.log("In box this  => " );
+           
+            
+            this.box.onmousedown = function(){
+                document.zIndexCount += 1;
+                this.style.zIndex = document.zIndexCount;
+                console.log(this.zindex);
+                this.xGap = event.clientX - this.offsetLeft;
+                this.yGap = event.clientY - this.offsetTop;
+                
+                
+                
+                var BOX = document.getElementsByClassName('box')[this.no];
+                
+                document.onmousemove = function(evt){
+                   BOX.style.left = event.clientX - BOX.xGap +'px';
+                   BOX.style.top = event.clientY - BOX.yGap +'px';
+                  
+                };
+            };
+            document.onmouseup = function(){
+                document.onmousemove = null;
+            };
+           
+            function getBox(){
+                return this.box
+            };
+         
+        };
+        
+        
+       
+        window.onload = function(){
+            console.log('hello')
+            new Box(50,150,300,300);
+            new Box(100,200,300,300);
+            new Box(150,250,300,300);
+            new Box(200,300,300,300);
+        }
+        
+    </script>
+</head>
+<body>
+    <h1>
+        이창훈의 홈페이지
+    </h1>
+    <hr>
+    
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function checkScore(score) {
+		if(score >= 0 && score <= 100) {
+			return true;
+		}
+		return false;
+	}
+	/* -------------------------------------------------------- */
+	function prnErrMsg() {
+		alert('성적의 범위가 올바르지 않습니다. 0-100점사이로 입력하세요');
+	}
+	/* -------------------------------------------------------- */
+	function input(length) {
+		var score = [];
+		for(var i = 0; i < length; ) {
+			score[i] = Number(prompt(i+1 + '번째 성적 입력'));
+			if(!checkScore(score[i])) {
+				prnErrMsg();
+			} else
+				i++;
+		}
+		
+		return score;
+	}
+	/* -------------------------------------------------------- */
+	function getGrade(score) {
+		if(score >= 90) 
+			return 'A';
+		if(score >= 80)
+			return 'B';
+		if(score >= 70)
+			return 'C';
+		if(score >= 60)
+			return 'D';
+		return 'F';
+	}
+	/* -------------------------------------------------------- */
+	function getTotal(score) {
+		var sum = 0;
+		for(var data of score) {
+			sum += data;
+		}
+		return sum;
+	}
+	/* -------------------------------------------------------- */
+	function getAvg(total, length) {
+		return (total / length).toFixed(2);
+	}
+	/* -------------------------------------------------------- */
+	function prnResult(score) {
+		document.write("NO SCORE GRADE<br>");
+		
+		for(var i in score) {
+			var grade = getGrade(score[i]);
+			document.write(Number(i)+1 + "&nbsp;&nbsp;" + score[i] 
+					+ "&nbsp;&nbsp;" + grade + "<br>");
+		}
+		
+		var total = getTotal(score);
+		var avg = getAvg(total, score.length);
+		
+		document.write(' 총 점 : ' + total + '점<br>');
+		document.write(' 평 균 : ' + avg + '점<br>');
+	}
+	/* -------------------------------------------------------- */
+	var score = input(5);
+	prnResult(score);
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	document.write("알파벳 개수 구하는 프로그램 작성<br>");
+	var aCap = "\u0041";
+	var zCap = "\u005A";
+	var  a= "\u0061"
+	var  z= "\u007A"
+	var aCapNum = aCap.charCodeAt(0);//유니코드값을 요구하는 코드
+	var zCapNum = zCap.charCodeAt(0);
+	var aNum = a.charCodeAt(0);
+	var zNum = z.charCodeAt(0);
+	var alphaNum = (Number(zCapNum) - Number(aCapNum) + 1) + (Number(zNum)-Number(aNum)+1);
+	document.write(alphaNum + "<br>");
+	
+	
+	
+	
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

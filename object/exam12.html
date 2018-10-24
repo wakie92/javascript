@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//나중에 다시물어보기
+	//은닉성을 위해 _표현
+	class Person {
+		constructor(name, phone, addr) {
+			this._name = name;
+			this._phone = phone;
+			this._addr = addr;
+		}
+		
+		info() {
+			document.write('name : ' + this._name + '<br>');
+			document.write(`phone : ${ this._phone }<br>`);
+			document.write(`address : ${ this._addr }<br>`);
+			document.write('<hr>');
+		}
+		
+		get name() {
+			return this._name;
+		}
+		  
+		set name(name) {
+			this._name = name;
+		}
+		  
+	}
+	
+	var person = new Person("홍길동", "010-1111-2222", "서울시 서초구");
+	person.info();
+	
+	alert(person.name);
+	person.name = "홍길순";
+	person.info();
+
+</script>
+</head>
+<body>
+
+</body>
+
+
+
+
+
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+class Data{
+	constructor(name, phone, addr){
+		this._name = name;
+		this._phone = phone;
+		this._addr = addr;
+	}
+	info(){
+		document.write('name : ' + this.name + '<br>');
+		document.write(`phone : ${ this.phone }<br>`);
+		document.write(`address : ${ this.addr }<br>`);
+		document.write('<hr>');
+	}
+	
+	get name() {
+		return this._name;
+	}
+	
+	set name(name) {
+		this._name = name;
+	}
+	
+	get phone() {
+		return this._phone;
+	}
+	
+	set phone(phone) {
+		this._phone = phone;
+	}
+	
+	get addr() {
+		return this._addr;
+	}
+	
+	set addr(addr) {
+		this._addr = addr;
+	}
+	
+}
+
+	function resister(){
+		var person = new Data();
+		person.name = prompt("이름을 입력하세요");
+		person.phone = prompt("번호를 입력하세요");
+		person.addr = prompt("주소를 입력하세요");
+		return person;
+	}
+	
+	function saveSelection(){
+		var num = Number(prompt("저장방식을 골라주세요 \n 1.자동번지방식 \n 2. 수동번지방식"));
+		switch(num){
+		case 1:
+			alert("자동번지방식을 선택하셨습니다.");
+			return num;
+			break;
+		case 2:
+			alert("수동번지방식을 선택하셨습니다.");
+			return num;
+		default:
+			alert("다시입력해주세요");
+		}
+	}
+	
+	var index = [];
+	index.length = 20;
+	index[4] = "sadf";
+	index[5] = "123";
+	
+	var bool = index[4];
+	
+	if(bool != true){
+		alert("index[4] : true " );
+	}
+	var bool = index[2];
+	alert("index[2] : " + bool);
+	if(bool != true){
+		alert("index[2] : true " );
+	}
+	function autoSave(index){
+		
+		
+	}
+	//var n = resister();
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

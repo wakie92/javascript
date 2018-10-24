@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//자바스크립트는 오버로딩을 허용하지 않는다.
+	//익명함수가 아무리 위쪽에 있다고 하더라도 익명함수가 실행된다. 
+	var testFunction = function() {
+		alert("testFunction call...");
+	}
+	function testFunction() {
+		alert("call.....");
+	}
+	function testFunction(data) {
+		alert("data : " + data);
+	}
+
+	// func라도 선언을 해도 temp에 넣어버리면 func가 의미가 없기 때문에 var temp = fucntion(); 이렇게 선언
+	var temp = function func() {
+		alert("call func()");
+	}
+
+	var func01 = function() {
+		alert("call function 01");
+	}
+
+	function sum(a, b) {
+		return a + b;
+	}
+	//함수를 호출하는 함수를 callback함수라고 한다.
+	function callbackFunc(funcName) {
+		funcName();
+	}
+
+	function getFunc(){
+		alert("getFunc 호출...");
+		return func01;
+	}
+	
+	
+	
+	//자주쓴다 나중에 다시 배울예정
+	function getFunction(){
+		return function(){
+			alert("!!!!");
+		};
+	}
+	
+	function getSum(a,b){
+		var sum =0;
+		while(a<=b){
+			sum += a++;
+		}
+		return sum;
+	}
+	
+	function printSum(a,b){
+		/* var sum =0;
+		while(a<=b){
+			sum +=a++;
+		} */
+		//alert(a + "~" + b +"사이의 총합: " + sum);
+		
+		//자바스크립트는 함수안에 함수를 생성할수 있다. 이 함수는 외부에서 호출 불가능함.
+		function innerSum(a,b){
+			var sum =0;
+			while(a<=b){
+				sum += a++;
+			}
+			return sum;
+		}
+		alert(a + "~" + b +"사이의 총합: " + innerSum(a,b));
+	}
+	////////////////////////////
+	printSum(1,10);
+	
+	var fn02 = getFunction();
+	fn02();
+	
+	var fn = getFunc();
+	fn();
+	// ==> getFunc()();
+	
+	callbackFunc(func01);
+	callbackFunc(testFunction);
+
+	var total = sum(10, 20);
+	alert("총합 " + total);
+	temp();
+	testFunction();
+	testFunction(10);
+</script>
+</head>
+<body>
+
+</body>
+</html>

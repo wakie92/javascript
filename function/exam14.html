@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function func(){
+		alert("3");
+	}
+	// 이게 더 중요
+	alert('1');
+	func();
+	alert('2');
+	
+	setTimeout(function(){
+		alert('3');
+	}, 0);// 웹브라우져에서 처리가 필요한 함수는 제일 나중에 처리됨.
+	alert('4');
+ 
+ /*  클로져 개념 
+	var closureFunc = function(i) {
+		setTimeout(function() {
+			alert(i);
+		}, 0);
+	}
+
+	for (var i = 1; i <= 5; i++) {
+		setTimeout(function() {
+			alert(i); //1,2,3,4,5 나오는것이 아니라 6 6 6 6 6 이 나온다. 
+		}, 0);
+	}
+	
+
+	//closureFunc(i);
+	(function(j) {
+		setTimeout(function() {
+			alert(j);
+		}, 0);
+	})(i);
+} */
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

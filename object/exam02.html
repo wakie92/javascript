@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//객체에 선언된 멤버 변수값에 접근하기 위해서는
+	//객체이름.벰버변수
+	
+	var person = {
+		"name" : "홍길동",
+		"phone" : "010-1111-2222",
+		"addr" : " 서울시 서초구 서초동",
+		"info" : function() {
+			/* var msg = " "
+			with (this) {
+				msg += "name : " + this.name + '\n';
+				msg += "phone : " + this.phone + '\n';
+				msg += "addr : " + this.addr + '\n';
+			}
+			 */
+
+			var msg = '';
+			for ( var key in this) {
+				//document.write(key + ' : ' + this[key] + '<br>');
+				msg += key + ' : ' + this[key] + '\n';
+				//alert(key + " : " + typeof this[key]);
+			}
+
+			alert(msg);
+			alert("name : " + this.name + "\nphone : " + this.phone
+					+ "\naddr : " + this.addr + '\n');
+
+		}
+	};
+	//person.info();
+	//객체가 아니다
+	function a() {
+		var names = [ "hong", "kang", "lee" ];
+		for ( var key in names ) {
+			console.log("name" + " : " + names[key]);
+		}
+
+	}
+	a();
+	/* with(person){
+		info();
+	}
+	
+	
+	person.toString = function() {
+		var msg = '';
+		for(var key in this) {
+			msg += key + ' ==> ' + this[key] + '\n';
+		}
+		return msg;
+	}
+
+	console.log(person);
+	alert(person);
+	alert(person.toString);
+	 */
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

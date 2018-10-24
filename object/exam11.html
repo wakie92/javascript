@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	class Person {
+		constructor(name, phone, addr) {
+			this.name = name;
+			this.phone = phone;
+			this.addr = addr;
+		}
+		
+		info() {
+			document.write('name : ' + this.name + '<br>');
+			document.write(`phone : ${ this.phone }<br>`);
+			document.write(`address : ${ this.addr }<br>`);
+			document.write('<hr>');
+		}
+	}
+	
+	var person = new Person("홍길동", "010-1111-2222", "서울시 서초구");
+	person.info();
+	alert(person.name);
+	person.name = "홍길순";
+	alert(person.name);
+</script>
+</head>
+<body>
+
+</body>
+
+
+
+
+
+
+</html>

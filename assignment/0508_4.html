@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function startDan() {
+		var start = Number(prompt("시작단을 입력하세요"));
+		return start;
+	}
+	function endDan() {
+		var end = Number(prompt("시작단을 입력하세요"));
+		return end;
+	}
+	function printGugu(start, end) {
+		if (start <= end) {
+			for (var i = start; i <= end; i++) {
+				for (var j = 1; j <= 9; j++) {
+					document.write(i + " * " + j + "= " + i * j);
+					nextLine();
+				}
+				markLine();
+			}
+		} else  {
+			for (var i = start; i >=end; i--) {
+				for (var j = 1; j <= 9; j++) {
+					document.write(i + " * " + j + "= " + i * j);
+					nextLine();
+				}
+				markLine();
+			}
+
+		}
+	}
+
+	function nextLine() {
+		document.write("<br>");
+	}
+	function markLine() {
+		document.write("--------------<br>");
+	}
+
+	////////////////////////////
+
+	printGugu(startDan(), endDan());
+</script>
+</head>
+<body>
+
+</body>
+</html>

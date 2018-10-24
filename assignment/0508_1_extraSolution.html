@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function inputNum(no){
+		var num = prompt(no + '\'s  정수입력');
+		return Number(num);
+	}
+	
+	function getMin(num, num2){
+		return num<num2? num : num2;
+	}
+	
+	function getMax(num,num2){
+		if(num>num2){
+			return num;
+		}
+			return num2;
+	}
+	
+	function print(num, num2, min, max){
+		document.write(`${num}, ${num2} 중 작은수는  ${min}<br>`);
+		document.write(`${num}, ${num2} 중 큰수는  ${max}<br>`);
+	}
+	
+		
+	
+	//////////////////////////////
+	var num = inputNum(1);
+	var num2 = inputNum(2);
+	var min = getMin(num,num2);
+	var max = getMax(num,num2);
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

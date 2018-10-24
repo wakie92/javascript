@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//setTimeout("alert("test")", 3000);
+	/*  타이머와 관련된 함수
+		javascript 내장함수
+		1.setTimeout()
+		2.setInterval()
+		3.clearInterval()
+		4.eval()
+		5.parseInt()
+		6.parseFloat()
+	*/
+	
+	/* setTimeout(function()){
+		alert('test');
+	},3000); */
+	
+	var pId = setInterval("console.log('hi')", 2000);
+	
+	setTimeout(function(){
+		clearInterval(pId);
+	},10000);
+</script>
+</head>
+<body>
+
+</body>
+</html>

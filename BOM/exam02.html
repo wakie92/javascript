@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var sub = window.open("","","width= 400  height = 300");
+	
+	var width = screen.width;
+	var height = screen.height;
+	console.log(width)
+	console.log(height)
+	sub.moveTo(0,0);
+	sub.resizeTo(width,height);
+	
+	var pId = setInterval(function(){
+		sub.moveBy(10,10);
+		sub.resizeBy(-20,-20);
+	},1000);
+	
+	
+	setTimeout(function(){
+		clearInterval(pId);
+	},10000)
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

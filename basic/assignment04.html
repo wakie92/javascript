@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	document.write("물건값과 지불한 돈의 액수를 입력했을 때 거스름돈 과 1000원 , 500원,100원, 50원의 개수를 출력하는 코드작성<br>");
+	
+	var price= prompt("물건값입력");// 물건값 입력
+	var cash = prompt("지불한돈의 액수");// 지불한돈의 액수
+	var change = cash-price;
+	document.write("거스름돈: " + change + "<br>");
+	var thw = parseInt(change/1000);
+	var fhw = parseInt((change-(1000*thw))/500);
+	var hw = parseInt((change - (1000*thw) - (500*fhw))/100);
+	var fw = parseInt((change - (1000*thw) - (500*fhw) - (100*hw))/50);
+	var tw = parseInt((change - (1000*thw) - (500*fhw) - (100*hw)-(50*fw))/10);
+	
+	document.write("1000원  :" + thw + "개 <br>");
+	document.write("500원  : " + fhw+ "개 <br>");
+	document.write("100원  : " + hw+ "개 <br>");
+	document.write("50원  : " + fw+ "개 <br>");
+	document.write("10원  : " + tw+ "개 <br>");
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

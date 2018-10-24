@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+/*
+	document.createElement(tagName) => tagName에 해당 tag 생성
+	document.createTextNode(text) => text를 가지는 node를 생성
+	객체.appendChild(node) => 해당객체에 node를 삽입
+		
+*/
+	//h2에 hello 를 넣고싶을떄
+	window.onload = function(){
+		var tag = document.createElement("h2");
+		
+		var tagText = document.createTextNode("Hello");
+		tag.appendChild(tagText);
+		document.body.appendChild(tag);
+		/////////////////////////////////////
+		//이미지를 삽입할때
+		var imgTag = document.createElement("img");
+		//imgTag.setAttribute(속성명,속성값);
+		
+		imgTag.setAttribute("src","https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Rottnest_Quokka_2004_SeanMcClean.jpg/1024px-Rottnest_Quokka_2004_SeanMcClean.jpg");
+		document.body.appendChild(imgTag);
+		
+		var aTag = document.createElement("a")
+		aTag.setAttribute("href", "http://www.daum.net");
+		aTag.setAttribute("target", "_blank");
+		
+		var heart = document.getElementsByClassName('heart');
+	/* 	aTag.href("http://www.daum.net");
+		aTag.target = "_blank"; 
+		이렇게도 가능핟.	
+	*/
+		
+		
+		aTag.appendChild(imgTag);
+		document.body.appendChild(aTag);
+		
+	}
+	
+</script>
+</head>
+<body>
+	<img class ="heart">
+<!-- 동적으로 hello를 쓰고싶을때 -->
+</body>
+</html>

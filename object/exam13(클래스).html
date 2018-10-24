@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+class Person {
+	constructor(name, phone, addr) {
+		this._name = name;
+		this._phone = phone;
+		this._addr = addr;
+	}
+	
+	info() {
+		document.write('name : ' + this._name + '<br>');
+		document.write(`phone : ${ this._phone }<br>`);
+		document.write(`address : ${ this._addr }<br>`);
+		document.write('<hr>');
+	}
+	
+	get name() {
+		return this._name;
+	}
+	
+	set name(name) {
+		this._name = name;
+	}
+	
+	get phone() {
+		return this._phone;
+	}
+	
+	set phone(phone) {
+		this._phone = phone;
+	}
+	
+	get addr() {
+		return this._addr;
+	}
+	
+	set addr(addr) {
+		this._addr = addr;
+	}
+}
+
+class Doctor extends Person {
+	constructor(name, phone, addr, major) {
+	 	super(name, phone, addr);
+		this._major = major;
+	}
+}
+
+
+var person = new Person("홍길동", "010-1111-2222", "서울시 서초구");
+var doctor = new Doctor("나최고", "010-4444-5555", "다고쳐 병원", "성형외과");
+person.info();
+
+
+doctor.info();
+alert(person.name);
+person.name = "홍길순";
+person.info(); 
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+
+
+
+
+
+
+</html>

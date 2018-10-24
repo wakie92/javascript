@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/* 
+ 
+ 	브라우져 객체 모델 (BOM)
+	window객체 
+	-location 객체
+	-navigation 객체
+	-history 객체
+	-screen 객체
+	-document 객체
+
+*/
+	//window.open("url","창이름","속성"); 일종의 팝업창을 띄움
+	//var sub = window.open("http://www.naver.com","","width = 400, height =300 resizable = no, scrollbar = no");
+	var sub = window.open("","","width = 400, height =300");
+	if(!sub){
+		alert("팝업창을 확인해주세요");
+	}
+	
+	sub.moveTo(100,100);// 팝업창의 위치 left, top
+	setInterval(function (){
+		sub.moveBy(20,20);
+	},1000);
+	sub.moveBy(20,20);
+</script>
+</head>
+<body>
+
+</body>
+</html>

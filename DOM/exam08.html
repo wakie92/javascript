@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	window.onload = function(){
+		var btn = document.getElementById("btn");
+		
+		btn.addEventListener('click',function(){
+			alert("click!!!");
+		}); //크롬이나 파이어 폭스같은 스윙 브라우져에서는 먹히지만 익스플로러에서는 안먹힐수 이싿.
+		btn.removeEventListener("onclick", function() {
+			alert("clear");//이렇게 가운데에 있으면 이벤트를 끝내겠다는 의미 alert는 아무의미없는 코드가 된다.
+		});
+		btn.addEventListener('click',function(){
+			alert("클릭!!!");
+		});//크롬이나 파이어 폭스같은 스윙 브라우져에서는 먹히지만 익스플로러에서는 안먹힐수 이싿.
+	
+		//이것이 레벨2버전의 차이점 두문장 전부 처리. 레벨1에서는 맨뒤에 문장만 처리 (exam07비교)
+		
+	/* 익스클로러 버전
+		var btn02 = document.getElementById("btn02");
+		btn02.attachEvent(onclick, function(){
+			alert("click2");
+		})
+	 */
+		
+	}
+
+	
+	
+</script>
+</head>
+<body>
+	<input type = "button" value = "클릭" id = "btn">
+	<input type = "button" value = "클릭" id = "btn02">
+</body>
+</html>

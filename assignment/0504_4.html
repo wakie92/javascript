@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var num = [];
+	var sum = 0;
+	var avg = 0;
+	var max = 0;
+	var min = 0;
+	var i = 0;
+	while(true){
+
+		num[i] = (prompt());
+	
+		if (num[i] == "quit") {
+			break;
+		} else {
+			num[i] = Number(num[i]);
+			num[i]
+			document.write("정수 입력 : " + num[i] + "<br>");
+		}
+		
+		if(i == 0){
+			min = num[i];
+			max = num[i];
+		}else{
+			if(num[i] > max){
+				max = num[i];
+			}
+			if(num[i]<min){
+				min= num[i]
+			}
+		}
+		
+		sum = sum + num[i];
+		
+		i++;
+	}avg = sum/num.length;
+	
+	document.write("가장 큰수  : " + max + "<br>");
+	document.write("가장 작은 수  : " + min + "<br>");
+	document.write("총합  : " + sum + "<br>");
+	document.write("평균  : " + avg + "<br>");
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

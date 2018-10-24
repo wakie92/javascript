@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	var tv = new Object();
+	tv.width = "30cm";
+	tv.height = "15cm";
+	tv.weight = "20kg";
+	tv.color = "wight";
+	
+	tv.off = function (){
+		document.write("전원 off");
+	}
+	document.write(tv.width + "<br>");
+	document.write(tv.height + "<br>");
+	document.write(tv.weight+ "<br>");
+	document.write(tv.color + "<br>");
+	
+	
+	tv.off()
+	console.log(tv);
+	
+	document.write("<hr>");
+	
+
+	var m = new Date(2002,4,31);
+	
+	document.write(m);
+	document.write("<hr>");
+	
+	var t = new Date();
+	var nowYear = t.getFullYear();
+	
+	var theDate = new Date(nowYear,11,31);
+	var diffDate = theDate - t;//밀리초 연말까지 남은 기간
+	
+
+	var result = Math.ceil(diffDate/(60*1000*60*24)) // 1일 = 86,400,000밀리초
+	
+	document.write ("현재일로부터 올해 말일 까지는 " + result + "일 남았습니다.");
+	document.write("<hr>");
+	
+	
+	var num1 = 3.23432424;
+	var num2 = 70000;
+	var num3 = "30.5px";
+	var num4 = 40;
+	//전부 문자형태로 반환
+	document.write(num2.toExponential(1)+"<br>");//지수표기법
+	document.write(num1.toFixed(2) + "<br>");// n자리만큼 반올림
+	document.write(num1.toPrecision(4)+"<br>");// 유효숫자 n의 개수만큼 반올림 
+	document.write(num1.toString()+"<br>");
+	document.write(num4.valueOf()+ "<br>");
+	
+	//정수로 반환
+	document.write(parseInt(num3) + parseInt(num4)+"<br>");
+	
+</script>
+</head>
+<body>
+	
+	
+</body> 
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

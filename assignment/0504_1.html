@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	
+	var num =[];
+	var even = [];
+	var odd = [];
+	for(var i = 0; i<10; i++){
+		num[i] = Number(prompt(`${i}번째 정수를 입력해주세요`));
+	}
+	
+	for(var i in num){
+		document.write((i+1) + "'s' 정수  :  " + num[i] + "<br>");
+		 if(num[i]%2==0){
+			even.push(num[i]);
+		} else{
+			odd.push(num[i]);	
+		}
+		}
+		
+	
+	/* for(var mod = 0; mod < 2; mod++) {
+		document.write('<< ' + (i == 0 ? "짝수" : "홀수") + ' >><br>');
+		for(var data of nums) {
+			if(data % 2 == mod) {
+				document.write(data + '&nbsp;&nbsp;&nbsp');		
+			}	
+		}
+		document.write('<br>');
+	}
+ */
+	document.write("<짝수>" + "<br>");
+	for(var i =0; i<even.length; i++){
+		document.write(even[i] + " ");
+	}
+	document.write("<br>");
+	document.write("<홀수>" + "<br>");
+	for(var i =0; i<odd.length; i++){
+		document.write(odd[i] + " ");
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

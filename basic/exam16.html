@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var book = Number(prompt("책권수 입력 : "));
+//공부필요 새로운거 이용할만하다 자바스크립트와 c에서만 가능하다 자바에서는 불가능
+	switch (true) {
+	 case true:
+	 case book < 0:
+		document.write("잘못입력했습니다.");
+		break; 
+	case book == 0:
+		document.write("소유한책 없음");
+		break;
+	case book == 1:
+		document.write(book + "book");
+		break;
+	case book > 1:
+		document.write(book + "books");
+		break;
+	}
+
+	/* switch (book >= 0) {
+	case true:
+		switch (book) {
+		case 0:
+			document.write("소유한책 없음");
+			break;
+		case 1:
+			document.write("1권");
+			break;
+		case 2:
+			document.write("2권");
+			break;
+		default:
+			break;
+		}
+		break;
+	case false:
+		document.write("잘못입력했음");
+	} */
+</script>
+</head>
+<body>
+
+</body>
+</html>

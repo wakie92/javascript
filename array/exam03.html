@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+//shallow copy & deepcopy
+
+	//매개변수 : shallow copy 그림그려보기
+		function test(ar){
+			ar = 12345;
+			return a;
+		}
+		
+		var ar = [10,20,30];
+		test(ar);
+		
+		document.write("a : " + ar + "<br>");
+		var array = [10,20,30];
+		var array2 = array;  //shallow copy
+		//배열은   10, 20 30 을 숫자를 저장한 주소값을 가진다.
+		//원본 array[0]에 100 을 넣었기 때문에 array2도 100,20,30을 가르킨다.
+		
+		
+		
+		var array 2 = [];//deepcopy
+		for(var i = 0; i <array.length; i++){
+			array2[i] = array[i];
+		}
+		
+		//ECMAScript 6 새로운 버전의  deepcopy;
+		var array2 = [...array];
+		
+		
+		
+		
+		
+		
+		document.write("array : " + array +"<br>");
+		document.write("array2 : " + array2 +"<br>");
+		
+		array[0]= 100;
+		document.write("array : " + array +"<br>");
+		document.write("array2 : " + array2 +"<br>");
+		
+		var num = 10;
+		var num2 = num;
+		document.write("num : "+ num + "<br>");
+		document.write("num2 : "+ num2 + "<br>");
+		
+		num = 100;
+		document.write("num2: "+ num + "<br>");
+		document.write("num2 : "+ num2 + "<br>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

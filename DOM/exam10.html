@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+/* 
+	패스워드, 패스워드 확인부가 서로 같으면 true 반환 다르면 false
+*/
+	function whenSubmit(){
+	/* 	var pass = document.getElementById("pass");
+		var pass_check = document.getElementById("pass_check");
+		console.log(pass);
+		console.log(pass_check); */
+		
+		var pass = document.inputForm.pass;
+		var pass_check = document.inputForm.pass_check;
+		
+		if(pass.value == pass_check.value){
+			return true;
+		}
+		
+		alert("패스워드가 서로 다릅니다.")
+		pass.value = "";
+		pass_check.value = "";
+		return false;
+	}
+
+</script>
+
+</head>
+<body>
+<!-- 사용자의 입력값은 value에 저장되어 전송 -->
+<!-- 게시판같은거 만들때 가장 많이 사용 -->
+<!-- 	
+<form  action = "exam09.html" method = "get" onsubmit = "return whenSubmit()">onsubmit은 submit의 행동을 채가는것이다. 이벤트를 할지 안할지 결정하기 위해   그래서 return 값이 필요하다. false면 절대 전송되지않느다.
+		아이디 : <input type  = "text" size = "30" name = "id"><br>
+		패스워드 : <input type = "password" size = "30" name= "pass" id ="pass"><br>
+		패스워드확인  : <input type = "password" size = "30" name= "pass_check"  id="pass_check"><br>
+		<input type = "submit" value= "전송">
+</form> 
+ -->
+	 
+	 <!-- form태그만 name속성을 이용해서 document가 접근가능 (ex. document.inputForm) -->
+	<form  action = "exam09.html" method = "get" name = "inputForm" onsubmit = "return whenSubmit()">
+		아이디 : <input type  = "text" size = "30" name = "id"><br>
+		패스워드 : <input type = "password" size = "30" name= "pass" id ="pass"><br>
+		패스워드확인  : <input type = "password" size = "30" name= "pass_check"  id="pass_check"><br>
+		<input type = "submit" value= "전송">
+	</form> 
+</body>
+</html>

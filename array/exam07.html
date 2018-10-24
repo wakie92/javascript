@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//ECMAScript 6 에서 추가된것
+	//reduce
+	
+	var nums = [1,2,3,4,5,6,7,8,9,10];
+	
+	var sum = 0;
+	for(var i in nums){
+		sum = sum + num[i];
+	}
+	
+	for(var data of nums){
+		sum = sum +data;
+	}
+	
+	nums.reduce(function(first, second,index, nums){
+		return first + second;
+	});
+	//두개씩 묶는 용도 
+	/*  
+	1,2,3,4,5,6,7,8,9,10
+	3,3,4,5,6,7,8,9,10
+	6,4,5,6,7,8,9,10
+	10,5,6,7,8,9,10
+	15,6,7,8,9,10
+	21,7,8,9,10
+	28,8,9,10
+	36,9,10
+	45,10
+	55,
+	*/
+	document.write("[" + nums + "] 총합 : " + sum + "<br>");
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

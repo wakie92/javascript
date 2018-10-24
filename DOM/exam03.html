@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+ 	window.onload = function(){
+		var node = document.querySelector("#id3");//(id, 속성명 등 들어갈수있음))
+		node.innerHTML = "아이디"
+;	}
+ 
+ 
+ 	window.onload = function(){
+	 	var node = document.getElementsByTagName("td");//배열의 형태로 저장
+	 	node[0].innerHTML = "아이디";
+		console.log(node)	 
+		node = node[0].innerHTML;
+		alert(node);
+	var nodes = document.querySelectorAll("#id3");
+	//	nodes[1].innerHTML = '패스워드';
+		nodes[1].innerText = '패스워드';
+
+  /* 
+ 	document.querySelector(선택자) 맨처음 검색된 tag 반환
+ 	document.querySelectorll(선택자) 선택자에 해당하는 모든 tag 반환
+  */
+ 
+ }
+	</script>
+</head>
+<body>
+<table border = "1">
+		<tr>
+			<td id= "id3">ID</td>
+			
+		</tr>
+		<tr>
+			<td id= "id3">PASSWORD</td>
+		</tr>
+	</table>	
+</body>
+</html>

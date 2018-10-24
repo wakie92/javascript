@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var nums = [];
+	while(true){
+		var data = prompt('정수 입력');
+		if(data == 'quit'){
+			break;
+		}
+		nums.push(Number(data));
+	}
+	
+	document.write(` <총 ${nums.length} 개 정수 출력 <br>`);
+	for (var i in nums){
+		document.write(num[i] + '&nbsp;&nbsp;');
+		if(i==0 ){
+			min = max = nums[i];
+		}else if (min>nums[i]){
+			min = nums[i];
+		}else if(max < nums[i]){
+			max = nums[i];
+		}
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

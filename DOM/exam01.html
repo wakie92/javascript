@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	window.onload = function(){
+		var HTML = document.body.innerHTML; //body 의 내용부의 내용을 추출하는 코드
+		var text = document.body.innerText;
+		
+		alert("innerHTML :" + HTML);
+		alert("innertext : " + text);
+		
+		
+		var content = "<h1>Good-bye</h1>";
+		content += "<ul>";
+		content +=     "<li>aaaa</li>";
+		content +=     "<li>bbbb</li>";
+		content +=     "<li>cccc</li>";
+		content += "</ul>";
+	//	document.body.innerHTML = content;
+//		document.body.innerText = content;
+		
+		document.body.innerHTML += content;
+		document.body.innerText += content;
+	
+	
+	
+	}
+	
+	
+</script>
+</head>
+<body>
+
+
+	Hello<br>
+	<h2>환영합니다.</h2>
+</body>
+</html>

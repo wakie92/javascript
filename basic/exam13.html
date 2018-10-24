@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/* 
+	var num = 10;
+	var num = 20;
+	var num = 30;
+	
+	var는 오류가 안ㅇ남
+	
+	let => ECMAScript6 추가된 자료형 : let const
+	let num2 = 10;
+	let num2 = 20;
+	let num2 = 30;
+	
+	let 은 재정의하는 것은 오류가 남  num2 = 20; 이런식으로 대입은 가능
+	
+	 */
+	 
+	 const num3 = 10;
+	// const num3 = 20;
+	//num3 = 20; // 재정의 안됨. 자료형 자체가 const이다. 자바에서의 final int num3 = 10; 이런것과는 다르다.
+	
+	var a = 10;
+	{
+		var temp = 20;
+		document.write(`a :${a}, temp:${temp}  <br>`);
+		
+	} // 스코프가 잡히지 않는다. 
+	document.write(`a : ${a}, temp:${temp} <br>`);
+	
+	var a = 10;
+	{
+		let temp2 = 20;
+		document.write(`a :${a}, temp2:${temp2}  <br>`);
+		
+	} // 스코프가 잡히지 않는다. 
+	document.write(`a : ${a}, temp2:${temp2} <br>`);
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

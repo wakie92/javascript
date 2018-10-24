@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	
+	function getSum(nums){
+		var sum = 0;
+		for(var i = 0; i<nums.length; i++){
+			sum = sum + nums[i];
+		}
+		return sum;
+	}
+	var nums = [1,5,34,79,10];
+	var sum = getSum(nums);
+	document.write("[" + nums + "] " + "총합 : " + sum + "<br>");
+	
+/////////////////////////////////////////////////////////////
+	function getGuguArr(dan){
+		var danArr = [];
+			 for (var i = 1; i<=9; i++){
+				 danArr.push(dan*i);
+			 }
+		return danArr;
+	}
+		var dan = 5;
+		document.write(dan + '단' + getGuguArr(dan));
+
+		
+		///////////////////////////////////////////////////////
+	function getArea(radius){
+		var area = radius * radius * 3.141592;
+		return area;
+	}
+
+	
+	alert('원넓이 : ' + getArea(10));
+
+	
+	////////////////////////////////////////////////////////
+	function prnArea(radius){
+		var area = radius*radius*3.141592;
+		alert("반지름 : " + radius + "=> 원넓이 " + area);
+	}
+	
+	prnArea(10);
+	prnArea(20);
+	prnArea(50);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//foreach함수 배우기
+	//map배우기 - deepcopy개념
+	//fillter, every , some 배우기
+	var nums = [10,20,30,40,50];
+	/*  
+		0번째 정수 : 10
+		1번째 정수 :ㅣ20
+		2번째 정수 :30
+	*/
+	
+	for(var i =0; i<nums.length; i++){
+		document.write(i + "번째 정수  : " + nums[i]  + "<br>");
+	}
+	document.write("<hr>");
+
+	for(var i in nums){
+		document.write(i + "번째 정수  : " + nums[i]  + "<br>");
+	}
+	document.write("<hr>");
+	
+	
+	var i = 0;
+	for(var num of nums){
+		document.write(i++ + "번째 정수  : "+ num + "<br>");
+	}
+	document.write("<hr>");
+/* -------------------------------------------------------------------- */
+	//되게 많이쓰는 함수 // 배열에 특화된 것
+	nums.forEach(function (element, index, nums){
+		document.write(index + "번째 정수  : " + element + "<br>");
+		
+	});//nums배열의 데이터가 있는 만큼만 포문을 돌린다.
+	
+	//map 나오기전에 사용되던 귀찮은 방법
+	/* var copyNums = [];
+	for (var i in nums){
+		copyNums[i] = nums[i];
+	}
+	 */
+	 
+	//nums가 가지고있는 index 만큼 배열을 만들고 return element을 해준다.
+	//[,,,,]  ==> [10,20,30,40,50];
+	 var copyNums = nums.map(function(element){
+		 return element;
+	 });
+	 
+	 document.write("nums : " + nums + "<br>");
+		document.write("copyNums : " + copyNums + "<br>");
+
+/* ------------------------------------------------------------------------ */		
+	//filter : 조건을 걸수있다.
+	 var nums = [1,2,3,4,5,6,7,8,9,10];
+	 var resultArr = nums.filter(function(element){
+		 return element % 2 == 0;
+	 });
+	 
+	document.write("resultArray : " + resultArr + "<br>");
+	
+	
+	/* --------------------------------------------------------------------- */
+	//every
+	//모든 element가 만족하면 return true , 아니면 return false
+	var bool = nums.every(function(element){
+		return element > 0;	
+	});
+	
+	
+	/*	//num.every 와 같은 코드
+		var bool = true;
+		for(var i in nums) {
+			if(nums[i] < 0) {
+				bool = false;
+				break;
+			}
+		}
+	*/	
+	document.write("모든 요소 양수인가? : " + bool + "<br>");
+	
+	
+	/* ------------------------------------------------------------------- */
+	//some 
+	bool = nums.some(function(element){
+		return element < 0;
+	})
+	document.write("모든 요소 중 음수가 있니?? : " + bool + "<br>");
+</script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

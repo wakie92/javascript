@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/* var k = 5;
+	for (var i = 0; i < 5; i++) {
+		for (var j = 0; j < 5; j++) {
+
+			document.write(j + k);
+		}
+		k--;
+		document.write("<br>");
+	} */
+
+	/* ------------------------------------------- */
+
+	for (var i = 5; i >= 1; i--) {
+		for (var j = i; j <= i + 4; j++) {
+
+			document.write(j);
+		}
+
+		document.write("<br>");
+	}
+
+	document.write("<hr>");
+
+	/* ------------------------------------------- */
+
+	/* 표를 그려서 규칙성 파악 */
+	for (var i = 0; i < 5; i++) {
+
+		for (var j = 0; j < i + 1; j++) {
+			document.write("*");
+		}
+
+		document.write("<br>");
+	}
+
+	document.write("<hr>");
+
+	/* ------------------------------------------- */
+	//내가 짠것
+	for (var i = 0; i < 9; i++) {
+		if (i < 5) {
+			for (var j = 5; j >= i + 1; j--) {
+				document.write("*");
+			}
+		} else {
+			for (var j = 5; j <= i + 1; j++) {
+				document.write("*");
+			}
+		}
+
+		document.write("<br>")
+
+	}
+	document.write("<hr>");
+	/* ------------------------------------------- */
+	// 좀더 생각 해보기   + 심화 
+	document.write("심화<br>");
+	var star = 5;
+	for (var i = 1; i <= 9; i++) {
+		for (var j = 0; j < star; j++) {
+			document.write("*");
+		}
+		document.write("<br>")
+		i < 5 ? star-- : star++;
+	}
+	document.write("<hr>");
+	/* ------------------------------------------- */
+
+	/* 내가 짠코드
+	var l = 5;
+	for (var i = 1; i <= 9; i++) {
+		
+		for (var j = 1; j <= l; j++) {
+			if (i <= l) {
+				if (j < l - i + 1) {
+					document.write("&nbsp");
+					
+				} else {
+					document.write("*");
+				}
+			} else {
+				if (j <= i - l) {
+					document.write("&nbsp");
+					
+				} else {
+					document.write('*')
+				}
+			}
+
+		}
+		document.write("<br>");
+	} */
+	
+	var space = 4;
+	var star = 1;
+	for (var i = 1; i <= 9; i++) {
+		for (j = 1; j <= 5 - star; j++) {
+			document.write("&nbsp;");
+		}
+		for (var j = 1; j <= star; j++) {
+			document.write("*");
+		}
+
+		document.write("<br>")
+		i < 5 ? (star++) : (star--);
+	}
+
+	document.write("<hr>")
+	var starCol = 5;
+ 	for(var i = 1; i <= 9; i++) {
+ 		for(var j = 1; j <= 5; j++) {
+ 			if(j < starCol) {
+ 				document.write('&nbsp;');
+ 			} else {
+ 				document.write('*');
+ 			}
+ 			
+ 		}
+ 		document.write('<br>');
+ 		
+ 		i < 5 ? starCol-- : starCol++;
+ 	}
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

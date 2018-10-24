@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+//이벤트 버블링 : 같은식의 자식에서부터 부모로까지 이벤트가 차례대로 실행되는것
+	window.onload = function(){
+		var divTag = document.getElementById("div01");
+		
+		divTag.onclick = function(){
+			alert("div영역 클릭 ");
+		}
+		
+		var spanTag = document.getElementById("span01");
+		spanTag.onclick = function(e){ //event를 e로 저장하는것이다. 이 경우에는 onclick
+			console.log(e);
+			e.stopPropagation();// 이게표준코드이다.
+			//e.cancleBubble();
+			alert("span영역 클릭")
+		}
+		
+	}
+
+
+</script>
+</head>
+<body>
+	<div id = "div01">
+		<h1 id= "div02" onclick = "alert('h1영역 클릭')">
+			<span id = "span01">이곳을 클릭하세요</span>
+		</h1>
+	</div>
+</body>
+</html>

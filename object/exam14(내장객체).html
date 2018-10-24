@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//자바스크립트의 내장 객체
+	//Number, Boolean, String, Array, Math, Date
+	
+	var str = "Hello world";
+	var name = "홍길동";
+//	var str = new String("Hello world");
+
+	document.write("문자열의 길이  : "  + str.length +"<br>" );
+	document.write( str[0] + " : "  + str.charAt(0) +"<br>" );
+	var str2 = str.concat(name);
+	document.write(str2 + "<br>");
+	
+	var idx = str.indexOf("r");
+	document.write("r의 위치 " +idx);
+	
+	var lastIdx = str.lastIndexOf("l");
+	document.write("l의 마지막 위치 : "  + lastIdx + "<br>" );
+	
+	/*
+	var idx = str.indexOf('l');
+	while(idx != -1) {
+		document.write('index : ' + idx + '<br>');
+		idx = str.indexOf('l', idx+1);
+	}
+	*/
+	idx = -1;
+	while( (idx = str.indexOf('l', idx+1)) != -1 ) {
+		document.write('index : ' + idx + '<br>');
+	}
+	
+	document.write('match : ' + str.match('llo') + '<br>');
+	document.write('replace : ' + str.replace('l', 'rr') + '<br>');
+	document.write('str : ' + str + '<br>');
+	document.write('search : ' + str.search('llo') + '<br>');
+	document.write('toLowerCase : ' + str.toLowerCase() + '<br>');
+	document.write('toUpperCase : ' + str.toUpperCase() + '<br>');
+	document.write('slice : ' + str.slice(3, 7) + '<br>');
+	document.write('substring : ' + str.substring(3, 7) + '<br>');
+	document.write('substr : ' + str.substr(3, 7) + '<br>');
+	document.write("split : " + str.split(" ") + "<br>");
+	str = "     Hello     World!!!      ";
+	document.write(`trim 전 str : [${str}]<br>`);
+	document.write(`trim 후 str : [${str.trim()}]<br>`);
+
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

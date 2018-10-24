@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function start() {
+		alert("인공지능 숫자 맞추기 게임");
+	}
+
+	function getAnswer(max, min) {
+		ans = parseInt(Math.random() * (max - min) + min);
+		alert("생각한 숫자가 [" + ans + "] 입니까?");
+		return ans;
+	}
+
+	function checkAnswer() {
+		count =0;
+		while (res != "correct") {
+
+			alert("max : " + max + " min : " + min);
+			var ans = getAnswer(min, max);
+			var res = respond();
+			upDownCorrect(res, ans);
+			count++;
+		}
+		alert(count + "번 만에 성공");
+	}
+
+	function upDownCorrect(res, ans){
+		if(res == "up"){
+			min = ans;
+			return min;
+		}else if(res == "down"){
+			max = ans;
+			return max;
+		}else if(res == "correct"){
+			alert("정답입니다.");
+			return ans;
+		}else{
+			alert("잘못 입력하셧습니다.");
+		}
+		
+	}
+	
+	function respond() {
+		var res = prompt("정답이면 correct 작은수면 down 큰수면 up입력하세요");
+		return res;
+	}
+
+	var min = 1;
+	var max = 100;
+	start();
+	checkAnswer();
+</script>
+</head>
+<body>
+
+</body>
+</html>

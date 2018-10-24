@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//변수의 지역성 
+
+	function test() {
+		var msg = "hello";//지역변수 
+		
+		return function cFun(){ //closer
+			alert(msg);
+		}
+	}
+
+	var fn = test();// 원래는 이때 msg가 사라져야함.
+	fn(); 
+	/* 자바스크립트의 지역성에 따르면 원래 fn()은 undefined가 정상적이지만 
+	return 값인 cFun은 원래 var msg에 접근하고 있었기때문에  사라지지않고 test()의 변수가 남아있다.
+	이를 closour라고 하고, 주로 return 값이 함수일때 발생한다.
+	*/
+	
+	
+	/* 
+	test();
+	alert(msg); // => 호출 안됨
+	 */
+
+	/* bbb();
+	var a = 10;
+	aa = 20;
+
+	function bbb() {//선언적 함수와 변수는 아래에 잡혀있어도 맨위로 위치를 바꿔준다.
+		alert(cnt);
+		var cnt = 0;
+		var aaa = 19;
+		abb = 200; // var를 안붙이고 선언을 하면 윈도우 객체에 붙고 전역변수 즉, 글로벌 변수가된다.
+		alert('!!!');
+	}
+
+	bbb(); */
+</script>
+</head>
+<body>
+
+</body>
+</html>

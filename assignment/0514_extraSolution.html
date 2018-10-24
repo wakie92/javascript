@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body * {
+		padding : 10px;
+		margin: 10px;
+	}
+	div {
+		width: 300px;
+		height: 150px;
+		border: 1px solid red;
+	}
+	
+	span {
+		margin : 0 0 0 10px;
+		padding: 0;
+	}
+	
+</style>
+<script>
+	function increBtn() {
+		var spanObj = document.getElementById("spanObj");
+		spanObj.innerHTML = parseInt(spanObj.innerText) + 1;
+	}
+	
+	function decreBtn() {
+		var spanTag = document.querySelector("#spanNum");
+		
+		var num = parseInt(spanTag.innerText);
+		if(num > 0) {
+			spanTag.innerHTML = --num;
+		}
+	}
+</script>
+
+</head>
+<body>
+	<div><!-- span태그는 inline으로 영역을 잡을떄 중요하게 사용된다. -->
+		<span id="spanObj">0</span>번 클릭 <button onclick="increBtn()">클릭</button><br>
+		<button onclick="decreBtn()">숫자감소</button><span id="spanNum">10 </span>번
+	</div>
+
+</body>
+</html>

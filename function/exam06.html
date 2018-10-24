@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function testFunc(){
+		console.log(arguments);
+		//일종의 배열로 내장 매개변수이다. 매개변수를 받지 않는 함수에 매개변수를 (10,'a')를  넣어 호출해도 arguments에 저장된다.
+			switch(arguments){
+			case 0:
+				alert('call....');
+				break;
+			case 1:
+				alert('data : ' + arguments[0]);
+				break;
+			case 2:
+				alert('no : ' + arguments[1] + ', msg : '+ arguments[1]);
+			}
+	}
+	
+	testFunc(1);
+	testFunc(10);
+	testFunc(10,'A');
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

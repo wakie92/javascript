@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var array = [ 'A', 10, 12.34, true, "ABC", null, '!' ];
+
+	document.write(array[0] + '<br>');
+	document.write(array[1] + '<br>');
+	document.write(array[2] + '<br>');
+	document.write(array[3] + '<br>');
+	document.write(array[4] + '<br>');
+	document.write(array[5] + '<br>');
+	document.write(array[6] + '<br>');
+	document.write(array[7] + '<br>');
+	document.write('<hr>');
+	document.write('array : ' + array + '<br>');
+	document.write('array : ' + array + '<br>');
+
+	array[7] = 'add';
+	document.write('add 추가후 array : ' + array + '<br>');
+
+	array[10] = "end";
+	document.write('end 추가후 array : ' + array + '<br>');
+
+	array.push("추가...");
+	document.write('추가 후 arary : ' + array + '<br>');
+
+	var data = array.pop();
+	document.write('삭제된 원소 : ' + data + '<br>');
+	document.write('array 원소의 개수 : ' + array.length + '개<br>');
+	
+	var str = "Hello World";
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/*  코드가 오류가 나더라도 계속해서 실행하기를 바라고 쓰는 코드
+  	try{
+  		 예외발생가능성이 높은 코드
+  	}
+  	catch(e){
+  		
+  	}
+  	finally
+ 
+ */
+
+	try{
+		alert("value : " + aaa());// 얘만 빼고 실행가능
+	}catch(e){
+		alert(e.message);
+		alert("예외발생!!");
+		console.log(e);
+		for(var key in e){
+			console.log(key + " : " + e[key]);
+		}
+	}
+	alert("test");
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

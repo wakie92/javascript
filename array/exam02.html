@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+		var names = ['홍길동', '정길동', '박길동', '한길동'];
+		
+		alert (names);
+		
+		for (var i= 0; i< names.length; i++){
+			/* alert(names[i]); */
+			
+			console.log(i+"성공"); // 웹브라우져 개발자도구 콘솔창에 출력
+		}
+		
+		/* for(var 변수 : in 배열명){
+			
+			
+		} */
+		
+		for(var i  in names){// 전부가농  
+			document.write(names[i] + "<br>");
+		}
+		document.write("<hr>");
+		
+		for(const data of names){// 읽기 전용 , 절대 편집 안됨
+			document.write(names[data] + "<br>"); // data = names[1]   데이터 변수 계속 변환 . 읽고 지워지고 읽고 지워지고 
+		}
+</script>
+</head>
+<body>
+
+</body>
+</html>

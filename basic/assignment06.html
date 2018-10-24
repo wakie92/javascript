@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/* 	
+	document.write("문제1 <br>");
+	var max= 0;
+	for(var i = 0 ; i < 4; i++){
+		var num = parseInt(Math.random() *100 + 1);
+		if (max<num){
+			max = num;
+		}
+		document.write(num + "<br>");
+	}
+	document.write("가장 큰수 : "+max);
+	
+	document.write("<hr>");
+	 
+	
+	 */
+	
+	
+	 document.write("문제2 <br>");
+
+	var temp = 0;
+		var num1 = Number(prompt("첫번째 정수를 입력하세요"));
+		var num2 = Number(prompt("두번째 정수를 입력하세요"));
+		var num3 = Number(prompt("세번째 정수를 입력하세요"));
+		
+	 if(num1 < num2 ){
+			temp = num1;
+			num1 = num2;
+			num2 = temp;
+		}
+	 if (num1<num3){
+		 	temp = num1;
+		 	num1 = num3;
+		 	num3 = temp;
+		}
+		if(num2<num3){
+			temp = num2;
+			num2 = num3;
+			num3 = temp;
+		}
+		
+	 document.write(num1+ "<br>");
+	 document.write(num2+"<br>");
+	 document.write(num3+"<br>");
+	 document.write("<hr>");
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	document.write("문제3 <br>");
+
+	var score = Number(prompt("성적을 입력하세요"));
+
+	switch (true) {
+	case score >= 90 && score <= 100:
+	document.write(score + "점의 학점은 A입니다.");
+	break;
+	case score >= 80 && score <= 89:
+	document.write(score + "점의 학점은 B입니다.");
+	break;
+	case score >= 70 && score <= 79:
+	document.write(score + "점의 학점은 C입니다.");
+	break;
+	case score >= 60 && score <= 69:
+	document.write(score + "점의 학점은 D입니다.");
+	break;
+	case score >= 0 && score <= 59:
+	document.write(score + "점의 학점은 E입니다.");
+	break;
+	default :
+	document.write("잘못입력하셨습니다.");
+	break;
+	}
+	
+	if(score >= 90 && score <= 100){
+	document.write(score + "점의 학점은 A입니다.");
+	}
+	else if(score >= 80 && score <= 89){
+	document.write(score + "점의 학점은 B입니다.");
+	}
+	else if(score >= 70 && score <= 79){
+	document.write(score + "점의 학점은 C입니다.");
+	}
+	else if(score >= 60 && score <= 69){
+	document.write(score + "점의 학점은 D입니다.");
+	}
+	else if(score >= 0 && score <= 59){
+	document.write(score + "점의 학점은 F입니다.");
+	}else {
+	document.write("잘못입력하셨습니다.");
+	}
+	document.write("<hr>");
+	
+	
+	
+	
+	
+	
+	 document.write("문제 4 <br>");
+	
+	document.write("단을 입력받아 해당 구구단을 출력하는 코드를 작성하시오<br>");
+	
+	
+	var num= Number(prompt());
+	if(num>0 && num <10){
+	 for(var j = 1; j <=9; j++){
+		 document.write(num+" * " +j + " = " + num*j + "<br>");
+	 }
+	}else{
+	 document.write("잘못입력하셨습니다.");
+	}
+	
+	document.write("<hr>")
+	
+	
+	
+	
+	
+	
+	 document.write("문제 5 <br>");
+	for(var i = 1; i<=9; i++){
+	 for(var j = 1; j<=9; j++){
+		 document.write(i+" * " +j + " = " + i*j + "<br>");
+	 }
+	 document.write("<br>");
+	}
+	document.write("<hr>")
+	 
+	
+	
+	
+	
+	
+	
+	 document.write("문제 6 <br>");
+	document.write("시작단, 종료단을 입력받아 구구단을 출력하시요<br>");
+
+	var start = Number(prompt());
+	var end = Number(prompt());
+
+	if (start < end) {
+		for (var i = start; i <= end; i++) {
+			for (var j = 1; j <= 9; j++) {
+				document.write(i + " * " + j + " = " + i * j + "<br>");
+			}
+			document.write("<br>");
+		}
+	} else if(start>end){
+		for (var i = start; i >= end; i--) {
+			for (var j = 1; j <= 9; j++) {
+				document.write(i + " * " + j + " = " + i * j + "<br>");
+			}
+			document.write("<br>");
+	}}else if(start = end){
+		for (var i = start; i >= end; i--) {
+			for (var j = 1; j <= 9; j++) {
+				document.write(i + " * " + j + " = " + i * j + "<br>");
+			}
+			document.write("<br>");
+	}
+	}
+	else{
+		document.write("잘못입력하셧습니다.<br>");
+	} 
+	document.write("<hr>")
+
+	
+	
+	
+	
+	document.write("문제 7 <br>")
+	var count = Number(0);
+	var time = Number(1);
+	var sumLen = Number(0);
+
+	while (sumLen < 100) {
+		if (sumLen >= 0 && sumLen < 50) {
+			
+			sumLen = sumLen + (time * 5) - (time * 1);
+			count++
+		} else if (sumLen > 50) {
+		
+			sumLen = sumLen + (time * 5) - (time * 1);
+			count++
+		}
+	} document.write("소요시간 : 약" + count + "<br>"); 
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

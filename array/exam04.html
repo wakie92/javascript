@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var state = new Array();
+	
+	/* state[0] = "서울특별시";
+	state[1] = "경기도";
+	state[2] = "인청광역시"; */
+	
+	state["서초"] = "서울특별시";
+	state["분당"] = "경기도";
+	state["연수"] = "인천광역시";
+	
+	for(var i in state){
+		document.write(i + " : " + state[i] +"<br>");
+	}
+	
+	var person = [];
+	person['name'] = "홍길동";
+	person['phone'] = "010-3330-3333";
+	person['addr'] = "서울시 서초구";
+	
+	for(var key in person){
+		document.write(key + " : " + person[key] +"<br>");
+	}
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

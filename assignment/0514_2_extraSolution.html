@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	input[type="text"] {
+		text-align: right;
+		padding-right: 5px;
+	}
+</style>
+<script>
+	function getPriority(op) {
+		switch(op) {
+		case '*' : 
+		case '/' : return 2;
+		case '+' :
+		case '-' : return 1;
+		}
+	}
+
+	function infixToPostfix(data) {
+		var op = [];
+		var postfix = [];
+		var num = 0;
+		for(var i = 0; i < data.length; i++) {
+			if(data.charAt(i) != '+' && data.charAt(i) != '-' && data.charAt(i) != '*' && data.charAt(i) != '/') {
+				postfix.push(data.charAt(i));				
+			} else {
+				while(op != '' && op.length > 0 &&  getPriority(op[op.length-1]) >= getPriority(data.charAt(i))) {
+					postfix.push(op.pop());
+				}
+				op.push(data.charAt(i));
+			}
+		}
+		while(op.length != 0) {
+			postfix.push(op.pop());
+		}
+		return postfix;
+	}
+	
+	function calcPostfix(postfix) {
+		var nums = [];
+		
+		for(var i = 0; i < postfix.length; i++) {
+			if(postfix[i] >= '0' && postfix[i] <= '9') 
+				nums.push(parseInt(postfix[i]));
+			else  {
+				var a = nums.pop();
+				var b = nums.pop();
+				switch(postfix[i]) {
+				case '+' :
+					nums.push(b + a);
+					break;
+				case '-' :
+					nums.push(b - a);
+					break;
+				case '*' :
+					nums.push(b * a);
+					break;
+				case '/' :
+					nums.push(b / a);
+					break;
+				}
+			}
+		}
+		return nums.pop();
+	}
+	
+
+	function calculator(data) {
+		var postfix = infixToPostfix(data);
+		var num = calcPostfix(postfix);
+		console.log(num);
+		return num;
+	}
+
+	function clickBtn(value) {
+		var monitor = document.getElementById("monitor");
+		
+		if(value === '=') {
+			monitor.value = calculator(monitor.value);
+//			monitor.value = eval(monitor.value);
+		} else if(value === 'clear') {
+			monitor.value = "";
+		} else {
+			monitor.value += value;
+		}
+	}
+</script>
+
+</head>
+<body>
+<input type="text" id="monitor"><br>
+	<input type="button" value="1" onclick="clickBtn(this.value)">
+	<input type="button" value="2" onclick="clickBtn(this.value)">
+	<input type="button" value="3" onclick="clickBtn(this.value)">
+	<input type="button" value="4" onclick="clickBtn(this.value)">
+	<input type="button" value="5" onclick="clickBtn(this.value)"><br>
+	<input type="button" value="+" onclick="clickBtn(this.value)">
+	<input type="button" value="-" onclick="clickBtn(this.value)">
+	<input type="button" value="*" onclick="clickBtn(this.value)">
+	<input type="button" value="/" onclick="clickBtn(this.value)">
+	<input type="button" value="=" onclick="clickBtn(this.value)">
+	<input type="button" value="clear" onclick="clickBtn(this.value)">
+
+</body>
+</html>

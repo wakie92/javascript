@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function func(num){
+		console.log("func() 시작")
+		try {
+			console.log("try 구문 진입");
+			//var arry = new Array(99999999999999999999999999999999999999);
+			if(num%2 == 1){
+				throw new Error("짝수가 아니어서 예외발생");
+			}
+			console.log("try 구문 종료");
+		}catch(e){
+			console.log("catch 구문 진입");
+			console.log(e.message);
+			return;//리턴을 하더라도 finally는 무조건 실행을하고 리턴함
+		}finally{
+			//무조건 실행 메모리 자원을 관리할때 많이쓴다.
+			console.log("finally 구문 진입");
+		}
+			console.log("func()종료");
+		
+	}
+</script>
+</head>
+<body>
+	<button onclick = "func(3)">click</button>
+</body>
+</html>

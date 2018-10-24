@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.btn {
+		width :50px;
+		height : 50px;
+	}
+	
+	#result{
+		width : 210px;
+		height : 50px;
+	}
+</style>
+<script>
+
+	function clc(num){
+		var res = document.getElementById(result);
+		calc.result.value += num;
+		return calc.result.value;
+		}
+	
+	function clearCal(){
+		calc.result.value = " " ;
+	}
+		
+	function answer(){
+		calc.result.value = eval(document.calc.result.value);
+		
+	}
+	
+</script>
+</head>
+<body>
+<form name = "calc">
+<table border ="1"  style="width: 150px; height: 150px">
+	
+	<tr>
+		<td colspan = "4"><input type ="text"  id = "result" value =""></td>
+		
+	</tr>
+	<tr>
+		<td><input type = "button" value ="7" class=btn id = "number" onclick ="clc(7)"></td>
+		<td><input type = "button" value ="8" class=btn id = "number" onclick ="clc(8)"></td>
+		<td><input type = "button" value ="9" class=btn id = "number" onclick ="clc(9)"></td>
+		<td><input type = "button" value ="/" class=btn id = "string" onclick ="clc('/')"></td>
+	</tr>
+	<tr>
+		<td><input type = "button" value ="4" class=btn id = "number" onclick ="clc(4)"></td>
+		<td><input type = "button" value ="5" class=btn id = "number" onclick ="clc(5)"></td>
+		<td><input type = "button" value ="6" class=btn id = "number" onclick ="clc(6)"></td>
+		<td><input type = "button" value ="*" class=btn id = "string" onclick ="clc('*')"></td>
+	</tr>
+	<tr>
+		<td><input type = "button" value ="1" class=btn id = "number" onclick ="clc(1)"></td>
+		<td><input type = "button" value ="2" class=btn id = "number" onclick ="clc(2)"></td>
+		<td><input type = "button" value ="3" class=btn id = "number" onclick ="clc(3)"></td>
+		<td><input type = "button" value ="-" class=btn id = "string" onclick = "clc('-')"></td>
+	</tr>
+	<tr>
+		<td><input type = "button" value ="0" class=btn id = "number" onclick ="clc(0)"></td>
+		<td><input type = "button" value ="." class=btn id = "string" onclick ="clc('.')"></td>
+		<td><input type = "button" value ="+" class=btn id = "string" onclick ="clc('+')"></td>
+		<td><input type = "button" value ="%" class=btn id = "string" onclick ="clc('%')"></td>
+	</tr>
+	
+	<tr>
+		<td colspan ="2"><input type = "button" value ="=" style ="width :100px; height: 50px" onclick ="answer()"></td>
+		<td colspan ="2"><input type = "button" value ="clear" style = "width: 100px; height: 50px" onclick ="clearCal()"></td>
+	</tr>
+	
+	
+	</table>
+	</form>
+</body>
+</html>

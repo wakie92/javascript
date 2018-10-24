@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+// 은닉에 대해서 외부에서 접근을 막는방법
+	function Person(n, p, a){
+		//멤버변수가 아닌상태
+		var name = n;
+		var phone = p;
+		var addr = a;
+		
+		this.getName = function (){
+			
+			return name;
+		}
+		
+		this.getPhone = function(){
+			
+			return phone;
+		}
+		
+		this.getAddr = function(){
+			
+			return getAddr;
+		}
+		
+		this.setName = function (n){
+			name = n;
+			
+		}
+		this.setPhone = function (p){
+			phone = p;
+			
+		}
+		this.setAddr = function (ad){
+			ad = ad;
+			
+		}
+	}
+	
+	var person = new Person ("홍길동" , "010-1111-2222", "서울시 서초구");
+	document.write("name : " + person.getName() + "<br>");
+	person.setName("고길동");
+	document.write("name : " + person.getName() + "<br>");
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

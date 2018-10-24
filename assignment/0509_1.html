@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	
+	//var ans = parseInt(Math.random()*100);
+	function getAnswer() {
+		var ans = parseInt(Math.random() * 100);
+		return ans;
+	}
+	//var life = Number(7);
+	function getLife() {
+		var life = Number(prompt("목숨은 몇개로 시작하시겠습니까."));
+		return life;
+	}
+	function resp() {
+		var res = Number(prompt("정답을 입력하세요"));
+		return res;
+	}
+	function restLife(life) {
+		if(life == 0 ){}
+		alert("기회는  " + life + "번 남았습니다.");
+	}
+
+	function end(ans){
+		alert(" 게임 오버 \n 정답은 " + ans + "입니다.");
+		
+	}
+	
+	function checkAnswer(res,ans,min,max){
+	
+		if (res>=min && res<max) {
+			if (res == ans) {
+				alert("정답입니다.");
+				return 0;
+			} else if (res > ans) {
+				alert(res + "보다 작은수 입니다.");
+				max = res;
+			} else {
+				alert(res + "보다 큰수 입니다.")
+				min = res;
+			}
+		} else {
+			alert("정답의 범위는" + min + "-" + max + "입니다");
+			
+		}
+		
+	}
+	
+	function starGame(){
+		var ans = getAnswer();
+		var life = getLife();
+		var min = Number(1);
+		var max = Number(100); 
+		while (life!=0) {
+			var res = resp();
+			life--;
+			var check = checkAnswer(res,ans,min,max);
+			if(check == 0){
+				break;
+			}
+			restLife(life) 
+			
+		}
+		end(ans);
+	}
+	/* ------------------------------------------------------------- */
+	
+	startGame();
+	
+ 
+</script>
+</head>
+<body>
+
+</body>
+</html>

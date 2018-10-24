@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	//prototype에 대해서. 되게 깊은 주제
+	function Person(name, phone, addr) {
+		this.name = name;
+		this.phone = phone;
+		this.addr = addr;
+	}
+	
+	var person= new Person("홍길동", "010-1111-2222", "서울시 서초구");
+	var person2 = new Person("이창훈", "010-5547-0034", "강동구 암사동");
+	console.log(person);
+	console.log(person2);
+	
+	Person.prototype.info = function (){
+		for(var key in this){
+			document.write(key + " : " + this[key] + "<br>");
+		}
+		document.write("<hr>");
+	}
+	
+	
+	Person.prototype.group = '프로토입 : 친구';
+	person.info();
+	person2.info();
+	
+	
+	Person.prototype.info= function(){
+		document.write("재정의  <br>");
+		document.write("<hr>");		
+	}
+	
+	
+	var person3 = new Person("이길여", "010-7390-0034", "노원구 중계동")
+	person3.info();
+	person.info();
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+//정규식에 관하여
+
+/* 
+	//정규식의 표현방식 /  ..... / 
+	^     : 입력값의 시작
+	$     : 입력값의 끝
+	*     : 0번이상의 반복
+	?	  :  0 또는 1번반복
+	+     :  1번이상반복
+	{n}   : n번 반복
+	{n,m} : 최소 n번 최대 m번
+	.  	  : 줄바꿈문자를 제외한 모든 문자를 의미
+	[...] : []안의 모든 문자 선택
+	[^...]: []안의 문자 제외
+	\b	  :
+	\B	  :
+	\d	  : 0-9사이의 문자
+	\D	  : 0-9사이의 문자 제외한 모든문자
+	\w	  : 알파벳, 숫자, 밑줄문자
+	\W	  : 알파벳, 숫자, 밑줄문자 제외한 모든 문자
+	\s    : 공백문자
+	\S    : 공백을 제외한 모든 문자
+	
+	/  /i : 대소문자 구분없이
+	/  /g : 반복 검색
+	ex. ^HD$ =>H로 시작해서 D로 끝나는것
+	ex. l* =>몇번나와도 상관없음.
+	ex. l+ =>l이 한번 이상 나옴
+	
+*/
+	var str =  new String ("Hello World");
+	console.log(str);
+	var pattern = "1{2}o";
+	alert(str.match(pattern));
+	
+	var pattern = new RegExp(/l{2}o/);
+	alert(str.match(pattern))
+
+	str = "Now is the time, This is the tame";
+ 	
+ 	pattern = new RegExp(/t\w{1,2}e/,"g");
+ 	pattern = new RegExp("/t\\w{1,2}e/","g");
+ 	var data = str.replace(pattern, "place");
+ 	console.log(data);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

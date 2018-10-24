@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+var cnt2=0;
+	function isPrime() {
+
+		var prime = [];
+		
+		var count = 0;
+		for (var i = 2; i <= 100; i++) {
+			cnt2++;
+			var cnt = 0;
+			for (var j = 1; j <= i; j++) {
+				if (i % j == 0) {
+					cnt++;
+				}
+			}
+			if (cnt == 2) {
+				prime.push(i);
+				document.write(i + " ");
+				++count;
+				if (count % 5 == 0) {
+					document.write("<br>");
+				}
+
+			}
+
+		}
+
+	}
+
+	///////////////////////////////////////////////////////////////////////////
+
+	isPrime();
+	document.write('<br>');
+	document.write(`cnt2 : ${ cnt2 }<br>`);
+</script>
+</head>
+<body>
+
+</body>
+</html>

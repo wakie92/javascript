@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+		//객체의 표현 var = {  };
+		//객체는 key 와 value의 쌍으로 이루어짐.
+
+		var person = {
+				name : "홍길동", 
+				phone : '010-1111-2222'
+		};
+		
+		document.write("name : "+ person['name']+ "<br>");
+		document.write(`phone: ${person["phone"]} <br>`);
+		document.write('name : ' + person.name	+ ", phone : " + person.phone + '<br>');
+		
+		alert(typeof person);
+		
+		document.write('name 속성 존재여부 : ' + ('name' in person) + '<br>');
+		document.write('phone 속성 존재여부 : ' + ('phone' in person) + '<br>');
+		document.write('addr 속성 존재여부 : ' + ('addr' in person) + '<br>');
+
+		person["addr"] = "서울시 서초구";
+		person.addr = "서울시 서초구"
+		document.write('name 속성 존재여부 : ' + ('name' in person) + '<br>');
+		document.write('phone 속성 존재여부 : ' + ('phone' in person) + '<br>');
+		document.write('addr 속성 존재여부 : ' + ('addr' in person) + '<br>');
+
+		
+		console.log(person);//객체의 정보는 alert나 document로 볼수 잆으니 console로 접근해야함.
+		delete(person.addr);
+		console.log(person);//객체의 정보는 alert나 document로 볼수 잆으니 console로 접근해야함.
+</script>
+</head>
+<body>
+
+</body>
+</html>

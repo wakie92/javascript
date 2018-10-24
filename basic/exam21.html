@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/*
+* 		----*----
+		---***---
+		--*****--
+		-*******-
+		*********
+		-*******-
+		--*****--
+		---***---
+		----*----
+*/
+	var space = 4;
+	for(var i = 1; i <= 9; i++) {
+		for(var j = 1; j <= 9; j++) {
+			if(j <= space || j >= 10-space) {
+				document.write('&nbsp;');
+			} else  {
+				document.write('*');
+			} 
+		}
+		document.write('<br>');
+		i < 5 ? space-- : space++;
+	} 
+
+/* 
+	var star = 1;
+	for(var i = 1; i <= 9; i++) {
+		for(var j = 1; j <= 5-star; j++) {
+			document.write('&nbsp;');
+		}
+		for(var j = 1; j <= 2*star-1; j++) {
+			document.write('*');
+		}
+		document.write('<br>');
+		i < 5 ? star++ : star--;
+	}
+*/ 	
+/*  
+	var space = 4, star = 1;
+	for(var i = 1; i <= 9; i++) {
+		for(var j = 1; j <= space; j++) {
+			document.write('&nbsp;');
+		}
+		for(var j = 1; j <= star; j++) {
+			document.write('*');
+		}
+		document.write('<br>');
+		i < 5 ? (space--, star += 2) : (space++, star -= 2);
+	} 
+*/
+
+/* 
+	for(var i = 1; i <= 9; i++) {
+		if(i <= 5) {
+			for(var j = 1; j <= 5-i; j++) {
+				document.write('&nbsp;');
+			}
+			for(var j = 1; j <= 2*i-1; j++) {
+				document.write('*');
+			}
+		} else {
+			for(var j = 1; j <= i-5; j++) {
+				document.write('&nbsp;');
+			}
+			for(var j = 1; j <= 2*(10-i)-1; j++) {
+				document.write('*');
+			}
+		}
+		document.write('<br>');
+	}
+*/ 	
+
+		
+		
+</script>
+</head>
+<body>
+
+</body>
+</html>

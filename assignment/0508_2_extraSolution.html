@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var cnt = 0;
+
+	function isPrime(num) {
+		/*
+		 //방법4
+		 var max = parseInt(num/2);
+		 for(var i = 2; i <= max; i++) {
+		 cnt++;
+		 if(num % i == 0) {
+		 return false;
+		 }
+		 }
+		 return true;
+		 */
+		/*		
+		 //방법3
+		 for(var i = 2; i <= num-1; i++) {
+		 cnt++;
+		 if(num % i == 0) {
+		 return false;	
+		 }
+		 }
+		 return true;
+		 */
+		/*
+		 //방법2
+		 var count = 0;
+		 for(var i = 2; i <= num-1; i++) {
+		 cnt++;
+		 if(num % i == 0) {
+		 count++;
+		 }
+		 }
+		 if(count == 0) {
+		 return true;
+		 }
+		 return false;
+		 */
+
+		//방법1
+		var count = 0;
+		for (var i = 1; i <= num; i++) {
+			cnt++;
+			if (num % i == 0) {
+				count++;
+			}
+		}
+		if (count == 2) {
+			return true;
+		}
+		return false;
+
+	}
+	//var num = parseInt(Math.random() * 100);
+	//var bool = isPrime(num);
+	//document.write(num + ' 소수여부 판단 : ' + bool);
+
+	// 이거 중요 
+	for (var num = 2, i = 0; num <= 100; num++) {
+		if (isPrime(num)) {
+			document.write(num + "&nbsp;&nbsp;");
+			if (++i % 5 == 0)
+				document.write('<br>');
+		}
+	}
+	document.write('<br>');
+	document.write(`cnt : ${ cnt }<br>`);
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

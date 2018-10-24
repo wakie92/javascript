@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+//상속개념
+	function Person(name, phone, addr) {
+		this.name = name;
+		this.phone = phone;
+		this.addr = addr;
+	}
+	Person.prototype.info = function() {
+		for ( var key in this) {
+			document.write(key + " : " + this[key] + "<br>");
+		}
+		document.write("<hr>");
+	}
+	
+	function Doctor(name, phone, addr, major){
+		//방법4
+		Person.apply(this, arguments);
+		
+		//방법3
+		//erson.call(this, name, phone, addr);
+
+		/* // name, phoe, addr을 안쓰고 사용하는법.
+		//방법2
+		this.base = Person;
+		this.base(name, phone, addr);
+		
+		 */
+		//방법1
+		/* this.name = name;
+		this.phone = phone;
+		this.addr = addr;
+		 */this.major = major;
+	}
+	
+	function Student(grade, ...args) {
+		Person.call(this, ...args);
+		//Person.apply(this, args);
+		// Person.apply(this, arguments);
+		//Person.call(this, name, phone, addr);
+		this.grade = grade;
+	}
+	Doctor.prototype = Person.prototype;// 프로토타입을 공유하고 있어야 상속이 된다.
+	Doctor.prototype.constructor = Doctor;
+
+	
+	var person= new Person("홍길동", "010-1111-2222", "서울시 서초구");
+	var doctor = new Doctor("이창훈", "010-5547-0034", "큰병원" , "정형외과");
+	var student = new Student("3학년", "김학생", "010-5555-6666", "서초중학교");
+	
+
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

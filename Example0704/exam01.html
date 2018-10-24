@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div#box 
+        {
+            position : absolute;
+            border:  3px solid black;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            /*display : table-cell;
+            vertical-align: middle;*/
+            
+            top: 100px;
+            left: 500px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var box = document.getElementById('box');
+            
+            //console.dir(dom);
+            box.onmousedown = function(){
+              
+                this.xGap = event.clientX - this.offsetLeft;
+                this.yGap = event.clientY - this.offsetTop;
+               
+                
+                document.onmousemove = function(evt){
+                   box.style.left = event.clientX - box.xGap +'px';
+                   box.style.top = event.clientY - box.yGap +'px';
+                }
+                
+            }
+            document.onmouseup = function(){
+                document.onmousemove = null;
+            }
+        };
+        
+    </script>
+</head>
+<body>
+    <h1>
+        이창훈의 홈페이지
+    </h1>
+    <hr>
+    <div id = "box"> Box</div>
+</body>
+</html>

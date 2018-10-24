@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var str = "Hello world";
+	
+	String.prototype.changeStr = function() {
+		
+		return this.bold().fontcolor('red').fontsize("15pt").link("http://www.naver.com");
+	};
+	document.write(str.changeStr()+"<br>");
+	document.write("hello".changeStr()+"<br>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var books = ["신데렐라", "백설공주", "콩쥐팥쥐", "피터팬"];
+	
+	for(var i in books){
+		document.write(books[i] + "&nbsp;&nbsp;");
+	}
+	document.write("<br>");
+	
+	books.sort();//자기자신을 변화시킨
+
+	for(var i in books){
+		document.write(books[i] + "&nbsp;&nbsp;");
+	}
+	document.write("<br>")
+	
+	var nums = [34, 67, 8, 12, 5, 9, 23, 534, 73, 2];
+	
+	document.write("sort 전 nums : " + nums + "<br>");
+	nums.sort();
+	document.write("sort 후 nums : " + nums + "<br>");
+	nums.sort(function(left, right) {//sort가 callback함수를 지원하고있다.
+		return left - right;
+	});
+	document.write("정수 오름차순 sort 후 nums : " + nums + "<br>");
+	
+	nums.sort(function(left,right){
+		return right-left;
+	});
+	document.write("정수 내림차순 sort 후 nums : " + nums + "<br>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

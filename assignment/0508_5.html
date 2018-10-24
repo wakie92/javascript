@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+		
+		var grade = [];
+		var scoreArr = [];
+		
+	function inputScore() {
+		
+		
+		var i = 0;
+		do{
+			score = Number(prompt(i + "번 학생의 성적을 입력하세요"));
+			if(score <0 || score>100){
+				document.write(i+1  + "'s 성적 : " + score + "<br>");
+				document.write("0-100점 사이로만 입력하세요<br>");
+			}else{
+				document.write(i+1  + "'s 성적 : " + score + "<br>");
+				scoreArr.push(score);
+				i++;
+			}
+		}while(i<5);
+		return scoreArr;
+	}
+
+	///////////////////////
+	function grade(inputScore) {
+		
+		var score = [];
+	
+		for(var i = 0 ; i < 5; i++){
+			score[i] = scoreArr[i]; 
+			switch (score[i] % 10) {
+				case 10:
+				case 9:
+					grade[i] = 'A'
+					break;
+				case 8:
+					grade[i] = 'B'
+					break;
+				case 7:
+					grade[i] = 'C'
+					break;
+				case 6:
+					grade[i] = 'D'
+					break;
+				default:
+					grade[i] = 'F'
+				}
+			}
+			return grade;
+		}
+			
+	function prinData(grade, score){
+			document.write("번호&nbsp;&nbsp;&nbsp;성적&nbsp;&nbsp;&nbsp;학점");
+		for(var i = 0 ; i<5; i++){
+			document.write(i+1 + "&nbsp;&nbsp;&nbsp;"+score[i]+ "&nbsp;&nbsp;&nbsp;" + grade[i]+"<br>");			
+			
+		}
+		
+	}
+
+	
+	function sum(score){
+		var sum = 0;
+			for (var i = 0;i <5; i++){
+				sum = sum +score[i];
+			}
+		return sum;
+	}
+	
+	function prinSum(sum){
+		document.write("총합 : " + sum);
+	}
+	
+	function avrg(sum){
+		var avg = sum/5;
+		return avg;
+	}
+	
+	function prinAvrg(avrg){
+		document.write("평균 : " +avg);
+	}
+	//////////////////////////////////////
+
+	var scoreF = inputScore();//성적을 넘기는 것이 목저
+	/* inputScore(); */
+	grade(scoreF);//겨로가 계속 grade is not a function
+	prinData(grade, score);
+	sum(score);
+	 prinSum(sum);
+	 avrg(sum);
+	 prinAvrg(avrg);
+	
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

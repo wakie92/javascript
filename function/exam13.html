@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//ECMAScript6 추가된 연산자 : 매개변수 "..."(전개연산자, 가변연산자)
+	function func01(){
+		document.write(arguments[0] + " : " + arguments[1] + " : " + arguments[2] + "<br>");
+	}
+	
+	function func02(... nums){//가변의 이름을 nums로 받겠다.
+		document.write(nums[0] + " : " + nums[1] + ' + ' + nums[2] + " <br> ");
+	}	
+	
+	function func03(a,...nums){
+		document.write("a : "+ a + "<br>");
+		for(const data of nums){
+			document.write(data +"&nbsp;&nbsp;")
+		}
+		document.write("<br>");
+	}
+	
+	function func04(a,b,c,d){
+		document.write("<hr");
+		document.write(a + " : " + b +" : " +  c + " : " + d + "<br>");
+	}
+	
+	function func05(...nums) {
+		document.write('<hr>');
+		for(const data of nums) {
+			document.write(data + ' : ');
+		}
+	}
+
+	func01(10,20,30);
+	func02(10,20,30);
+	func03('A');
+	func03('B',1);
+	func03('C',1,2,3);
+	
+	var array = [100,200,300,400];
+	func04(array[0],array[1],array[2],array[3]);
+	func04.apply(null, array);//배열이 날라가는것이 아니라 각가 abcd변수와 0123번지 를 매칭 시킨다.
+	func05.apply(null, array);//배열이 날라가는것이 아니라 각가 abcd변수와 0123번지 를 매칭 시킨다.
+	func04(...array);//배열이 날라가는것이 아니라 각가 abcd변수와 0123번지 를 매칭 시킨다.
+	func05(...array, ...array);//배열이 날라가는것이 아니라 각가 abcd변수와 0123번지 를 매칭 시킨다.
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

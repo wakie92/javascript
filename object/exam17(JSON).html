@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+/* 자바스크립트와 다른 언어간의 교류가 있을때 필요함.
+	JSON : 자바스크립트 객체
+  	JSON.stringify();   :  javascript 객체를 문자열로 변환
+  	JSON.parse();       :  JSON 문자열을 자바스크립트 객체로 변환
+  	toJSON :  보여주고 싶은 정보를 넣어서 return  내장함수
+ */
+
+ 	var person ={
+  			"name" : "홍길동",
+  			"phone" : "010-1111-2222",
+  			"addr" : "서울시 서초구 서초동"
+  			
+  			,toJSON : function (){
+  				return {
+  					"name" : this.name,
+  					"phone" : this.phone,
+  					"realAddr" : this.addr
+  				};
+  			}
+  	};
+  	
+  	console.log(person);
+ 
+  	var strObj = JSON.stringify(person);
+ 	console.log(strObj);
+ 	
+ 	var obj = JSON.parse(strObj);
+ 	console.log(obj);
+ 	
+ 	var str = '{"name" :  "홍길순", "age" : "12"}';
+ 	var obj02 = JSON.parse(str);
+ 	console.log(obj02);
+</script>
+</head>
+<body>
+
+</body>
+</html>

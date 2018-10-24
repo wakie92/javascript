@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	var score = [];
+	var grade = [];
+	var error = 0;
+	
+	
+	for (var i = 0; i < 5; i++) {
+		score[i] = Number(prompt("성적을 입력하세요"));
+		document.write((i + 1) + "'s 성적 : " + score[i] + "<br>");
+		switch(true){
+			case score[i] >= 90 && score[i] <= 100:
+				grade[i] = "A";
+			break;
+			case score[i] >= 80 && score[i] <= 89:
+				grade[i] = "B";
+			break;
+			case score[i] >= 70 && score[i] <= 79:
+				grade[i] = "C";
+			break;
+			case score[i] >= 60 && score[i] <= 69:
+				grade[i] = "D";
+			break;
+			case score[i] >= 0 && score[i] <= 59:
+				grade[i] = "F";
+			break;
+			default:
+				grade[i] = "ERROR!!!";
+				error++;
+			break;
+			}
+	}
+
+	var sum = 0;
+	
+		document.write("번호 &nbsp;&nbsp;&nbsp; 성적&nbsp;&nbsp;&nbsp; 학점 <br>");
+		for(var i = 0; i<5; i++){
+			document.write((i+1) + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + score[i] + 
+									"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" +grade[i]+ "<br>");
+			if(score[i]<=100 && score[i]>=0){
+				sum  = sum + score[i];
+			}else{
+				sum = sum + 0;
+			}
+		}document.write(`${score.length}번 입력중 ${error}번 에러 발생 <br>`);
+		document.write("총점 : " + sum + "<br>");
+		document.write("평균 : " + sum/score.length + "<br>");
+		
+</script>
+</head>
+<body>
+
+</body>
+</html>
